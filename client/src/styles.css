@@ -4,6 +4,10 @@
     border-radius: 0px;
 }
 
+.bgc{
+    background : linear-gradient(to right, #4F0084, #864b9b, #cda49a)}
+
+    
 .cart-badge,
 .cart-badge :hover {
     border-radius: 50%;
@@ -14,7 +18,7 @@
 }
 
 .name {
-    background: #343a40 !important;
+    /* background: #343a40 !important; */
     color: white;
     font-weight: bold;
 }

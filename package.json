@@ -13,6 +13,9 @@
   "author": "Anant Mathur",
   "license": "MIT",
   "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/material": "^5.11.15",
     "axios": "^0.26.1",
     "body-parser": "^1.19.0",
     "braintree": "^2.21.0",

@@ -3,6 +3,10 @@ import Layout from './Layout';
 import {getProducts} from './apiCore';
 import Card from './Card';
 import Search from './Search'
+//
+// import SliderImg from "./Slider"
+//
+
 
 const Home = () => {
 
@@ -59,29 +63,38 @@ const Home = () => {
     }, [])
 
     return (
-        <Layout title="KP BookStore" description="Buy some awesome books now" className="container-fluid">
-            <Search />
-            <h2 className="mb-4">New Arrivals</h2>
-            {showLoading()}
-            <div className="row">                
-                {productsbyArrival.map((product, i) =>(
-                    <div key={i} className="col-4 mb-3">    
-                       <Card product={product} />      
-                    </div>
-                ))}
-            </div>
+        <Layout title="THE BOOKSHELF " description="Buy Some Awesome Books Now">
 
-            <h2 className="mb-4">Best Sellers</h2>
+
+            <Search />
+        
+
+
+            <h2 className="text-3xl font-bold mb-4">New Arrivals</h2>
             {showLoading()}
-            <div className="row">                
-                {productsbySell.map((product, i) =>(
-                    <div key={i} className="col-4 mb-3">    
-                       <Card product={product} />      
+            <div className="flex flex-wrap -mx-2">
+                {productsbyArrival.map((product, i) => (
+                    <div key={i} className="w-full md:w-1/2 lg:w-1/3 xl:w-1/3 px-2 mb-4">
+                        <Card product={product} />
                     </div>
                 ))}
             </div>
+            
+            <h2 className="text-3xl font-bold mb-4">Best Sellers</h2>
+            {showLoading()}
+            <div className="flex flex-wrap -mx-2">
+                {productsbySell.map((product, i) => (
+                    <div key={i} className="w-full md:w-1/2 lg:w-1/3 xl:w-1/3 px-2 mb-4">
+                        <Card product={product} />
+                    </div>
+                ))}
+            </div>
+      
 
         </Layout>
+
+       
+
            
     )
 };
