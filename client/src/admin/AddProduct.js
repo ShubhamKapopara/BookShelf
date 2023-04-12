@@ -85,25 +85,15 @@ const AddProduct = () => {
   };
 
   const newPostForm = () => (
-    <form className="mb-3" onSubmit={clickSubmit}>
-      <h4>Post photo</h4>
-      <div className="form-group">
-        <label className="btn btn-secondary">
-          <input
-            onChange={handleChange("photo")}
-            type="file"
-            name="photo"
-            accept="image/*"
-          />
-        </label>
-      </div>
+    <form className="w-full max-w-2xl mx-auto" onSubmit={clickSubmit}>
+      
 
       <div className="form-group">
         <label>Name</label>
         <input
           onChange={handleChange("name")}
           type="text"
-          className="form-control"
+          className="text-sm bg-gray-200 appearance-none rounded w-full py-2 px-3 text-gray-700 mb-1 leading-tight focus:outline-none focus:shadow-outline h-10"
           value={name}
         />
       </div>
@@ -112,7 +102,7 @@ const AddProduct = () => {
         <label>Description</label>
         <textarea
           onChange={handleChange("description")}
-          className="form-control"
+          className="text-sm bg-gray-200 appearance-none rounded w-full py-2 px-3 text-gray-700 mb-1 leading-tight focus:outline-none focus:shadow-outline h-20"
           value={description}
         />
       </div>
@@ -122,7 +112,7 @@ const AddProduct = () => {
         <input
           onChange={handleChange("price")}
           type="number"
-          className="form-control"
+          className="text-sm bg-gray-200 appearance-none rounded w-full py-2 px-3 text-gray-700 mb-1 leading-tight focus:outline-none focus:shadow-outline h-10"
           value={price}
         />
       </div>
@@ -131,7 +121,7 @@ const AddProduct = () => {
         <label>Category</label>
         <select
           onChange={handleChange("category")}
-          className="form-control"
+          className="text-sm bg-gray-200 appearance-none rounded w-full py-2 px-3 text-gray-700 mb-1 leading-tight focus:outline-none focus:shadow-outline h-10"
           value={category}
         >
           <option>Select</option>
@@ -143,12 +133,12 @@ const AddProduct = () => {
             ))}
         </select>
       </div>
-
-      <div className="form-group">
+ 
+      <div className="my-2">
         <label>Shipping</label>
         <select
           onChange={handleChange("shipping")}
-          className="form-control"
+          className="text-sm bg-gray-200 appearance-none rounded w-full py-2 px-3 text-gray-700 mb-1 leading-tight focus:outline-none focus:shadow-outline h-10"
           value={shipping}
         >
           <option>Please Select</option>
@@ -157,17 +147,31 @@ const AddProduct = () => {
         </select>
       </div>
 
+
+
       <div className="form-group">
         <label>Quantity</label>
         <input
           onChange={handleChange("quantity")}
           type="number"
-          className="form-control"
+          className="text-sm bg-gray-200 appearance-none rounded w-full py-2 px-3 text-gray-700 mb-1 leading-tight focus:outline-none focus:shadow-outline h-10"
           value={quantity}
         />
       </div>
+      <h4>Post photo</h4>
+      <div className="form-group">
+        <label className="">
+          <input
+            onChange={handleChange("photo")}
+            type="file"
+            name="photo"
+            accept="image/*"
+            className="text-sm bg-gray-200 appearance-none rounded w-fit  text-gray-700 mb-1  focus:outline-none focus:shadow-outline h-10"
+          />
+        </label>
+      </div>
 
-      <button className="btn btn-outline-primary">Create Product</button>
+      <button className="mt-4 w-full bg-gray-800 hover:bg-grey-900 text-white text-sm py-2 px-4 font-semibold rounded focus:outline-none focus:shadow-outline h-10">Create Product</button>
     </form>
   );
 
@@ -179,7 +183,7 @@ const AddProduct = () => {
 
   const showSuccess = () => (
     <div
-      className="alert alert-info"
+      className="w-full max-w-3xl text-center bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded relative mb-4"
       style={{display: createdProduct ? "" : "none"}}
     >
       <h2>{`${createdProduct}`} is created</h2>
@@ -188,7 +192,7 @@ const AddProduct = () => {
 
   const showLoading = () =>
     loading && (
-      <div className="alert alert-success">
+      <div className="w-full mx-auto max-w-3xl text-center bg-green-500">
         <h2>Loading...</h2>
       </div>
     );

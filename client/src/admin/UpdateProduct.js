@@ -112,88 +112,94 @@ const UpdateProduct = ({ match }) => {
     };
 
     const newPostForm = () => (
-        <form className="mb-3" onSubmit={clickSubmit}>
-            <h4>Post Photo</h4>
-            <div className="form-group">
-                <label className="btn btn-secondary">
-                    <input
-                        onChange={handleChange("photo")}
-                        type="file"
-                        name="photo"
-                        accept="image/*"
-                    />
-                </label>
-            </div>
+        <form className="w-full max-w-2xl mx-auto" onSubmit={clickSubmit}>
+      
 
-            <div className="form-group">
-                <label className="text-muted">Name</label>
-                <input
-                    onChange={handleChange("name")}
-                    type="text"
-                    className="form-control"
-                    value={name}
-                />
-            </div>
-
-            <div className="form-group">
-                <label className="text-muted">Description</label>
-                <textarea
-                    onChange={handleChange("description")}
-                    className="form-control"
-                    value={description}
-                />
-            </div>
-
-            <div className="form-group">
-                <label className="text-muted">Price</label>
-                <input
-                    onChange={handleChange("price")}
-                    type="number"
-                    className="form-control"
-                    value={price}
-                />
-            </div>
-
-            <div className="form-group">
-                <label className="text-muted">Category</label>
-                <select
-                    onChange={handleChange("category")}
-                    className="form-control"
-                >
-                    <option>Please select</option>
-                    {categories &&
-                        categories.map((c, i) => (
-                            <option key={i} value={c._id}>
-                                {c.name}
-                            </option>
-                        ))}
-                </select>
-            </div>
-
-            <div className="form-group">
-                <label className="text-muted">Shipping</label>
-                <select
-                    onChange={handleChange("shipping")}
-                    className="form-control"
-                >
-                    <option>Please select</option>
-                    <option value="0">No</option>
-                    <option value="1">Yes</option>
-                </select>
-            </div>
-
-            <div className="form-group">
-                <label className="text-muted">Quantity</label>
-                <input
-                    onChange={handleChange("quantity")}
-                    type="number"
-                    className="form-control"
-                    value={quantity}
-                />
-            </div>
-
-            <button className="btn btn-outline-primary">Update Product</button>
-        </form>
+        <div className="form-group">
+          <label>Name</label>
+          <input
+            onChange={handleChange("name")}
+            type="text"
+            className="text-sm bg-gray-200 appearance-none rounded w-full py-2 px-3 text-gray-700 mb-1 leading-tight focus:outline-none focus:shadow-outline h-10"
+            value={name}
+          />
+        </div>
+  
+        <div className="form-group">
+          <label>Description</label>
+          <textarea
+            onChange={handleChange("description")}
+            className="text-sm bg-gray-200 appearance-none rounded w-full py-2 px-3 text-gray-700 mb-1 leading-tight focus:outline-none focus:shadow-outline h-20"
+            value={description}
+          />
+        </div>
+  
+        <div className="form-group">
+          <label>Price</label>
+          <input
+            onChange={handleChange("price")}
+            type="number"
+            className="text-sm bg-gray-200 appearance-none rounded w-full py-2 px-3 text-gray-700 mb-1 leading-tight focus:outline-none focus:shadow-outline h-10"
+            value={price}
+          />
+        </div>
+  
+        <div className="form-group">
+          <label>Category</label>
+          <select
+            onChange={handleChange("category")}
+            className="text-sm bg-gray-200 appearance-none rounded w-full py-2 px-3 text-gray-700 mb-1 leading-tight focus:outline-none focus:shadow-outline h-10"
+            value={category}
+          >
+            <option>Select</option>
+            {categories &&
+              categories.map((c, i) => (
+                <option key={i} value={c._id}>
+                  {c.name}
+                </option>
+              ))}
+          </select>
+        </div>
+   
+        <div className="my-2">
+          <label>Shipping</label>
+          <select
+            onChange={handleChange("shipping")}
+            className="text-sm bg-gray-200 appearance-none rounded w-full py-2 px-3 text-gray-700 mb-1 leading-tight focus:outline-none focus:shadow-outline h-10"
+            value={shipping}
+          >
+            <option>Please Select</option>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+          </select>
+        </div>
+  
+  
+  
+        <div className="form-group">
+          <label>Quantity</label>
+          <input
+            onChange={handleChange("quantity")}
+            type="number"
+            className="text-sm bg-gray-200 appearance-none rounded w-full py-2 px-3 text-gray-700 mb-1 leading-tight focus:outline-none focus:shadow-outline h-10"
+            value={quantity}
+          />
+        </div>
+        <h4>Post photo</h4>
+        <div className="form-group">
+          <label className="">
+            <input
+              onChange={handleChange("photo")}
+              type="file"
+              name="photo"
+              accept="image/*"
+              className="text-sm bg-gray-200 appearance-none rounded w-fit  text-gray-700 mb-1  focus:outline-none focus:shadow-outline h-10"
+            />
+          </label>
+        </div>
+  
+        <button className="mt-4 w-full bg-gray-800 hover:bg-grey-900 text-white text-sm py-2 px-4 font-semibold rounded focus:outline-none focus:shadow-outline h-10">Create Product</button>
+      </form>
     );
 
     const showError = () => (

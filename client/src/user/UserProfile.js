@@ -49,23 +49,24 @@ const UserProfile = ({ match }) => {
     }
 
     const profileUpdate = (name, email, password) => (
-        <form>
-            <div className="form-group">
+        <form className='w-full max-w-lg mx-auto'>
+        <h2 className='font-semibold text-center'>Profile Update</h2>
+            <div className="">
                 <label className="text-muted">Name</label>
-                <input type="text" value={name} onChange={handleChange('name')} className="form-control" />
+                <input type="text" value={name} onChange={handleChange('name')} className="text-sm bg-gray-200 appearance-none rounded w-full py-2 px-3 text-gray-700 mb-1 leading-tight focus:outline-none focus:shadow-outline h-10" />
             </div>
 
             <div className="form-group">
                 <label className="text-muted">Email</label>
-                <input type="email" value={email} onChange={handleChange('email')} className="form-control" />
+                <input type="email" value={email} onChange={handleChange('email')} className="text-sm bg-gray-200 appearance-none rounded w-full py-2 px-3 text-gray-700 mb-1 leading-tight focus:outline-none focus:shadow-outline h-10" />
             </div>
 
             <div className="form-group">
                 <label className="text-muted">Password</label>
-                <input type="password" value={password} onChange={handleChange('password')} className="form-control" />
+                <input type="password" value={password} onChange={handleChange('password')} className="text-sm bg-gray-200 appearance-none rounded w-full py-2 px-3 text-gray-700 mb-1 leading-tight focus:outline-none focus:shadow-outline h-10" />
             </div>
 
-            <button onClick={clickSubmit} className="btn btn-primary">Submit</button>
+            <button onClick={clickSubmit} className="mt-4 w-full bg-gray-800 hover:bg-grey-900 text-white text-sm py-2 px-4 font-semibold rounded focus:outline-none focus:shadow-outline h-10">Submit</button>
         </form>
     )
 
@@ -89,7 +90,6 @@ const UserProfile = ({ match }) => {
 
     return (
         <Layout title="My Profile" description="Update your profile" className="container-fluid">
-            <h2>Profile Update</h2>
             {showLoading()}
             {profileUpdate(name, email, password)}
             {redirectuser(success)}

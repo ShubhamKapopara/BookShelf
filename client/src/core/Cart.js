@@ -15,7 +15,7 @@ const Cart = () => {
             <div>
                 <h2>Your cart is empty</h2>
                 <br />
-                <Link to ="/shop">Start Shopping now!</Link>
+                <Link to ="/shop" className="text-blue-500 hover:text-blue-700">Start Shopping Now!</Link>
             </div>
         )
     }
@@ -24,7 +24,7 @@ const Cart = () => {
     const showItems = items => {
         return (
             <div>
-                <h2>Your cart has {`${items.length}`} items</h2>
+                <h2 className='font-bold'>Your Cart Has {`${items.length}`} Items</h2>
                 <hr />
                 {items.map((p, i) => (
                 <Card key={i} product={p} showAddToCartButton={false} 
@@ -39,7 +39,7 @@ const Cart = () => {
     }, [run])
 
     return (
-        <Layout title="My Cart" description="Manage your cart items. Add, Remove, Checkout or continue shopping"
+        <Layout title="My Cart" description="Manage your cart items. Add, Remove, Checkout or Continue Shopping"
          className="container-fluid">
              
         <div className="row">

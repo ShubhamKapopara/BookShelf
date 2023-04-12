@@ -114,6 +114,8 @@ import { addItem, updateItem, removeItem } from "./cartHelpers";
 
 ////tl
 
+
+
 const Card = ({
   product,
   showViewProductButton = true,
@@ -125,6 +127,8 @@ const Card = ({
 }) => {
   const [redirect, setRedirect] = useState(false);
   const [count, setCount] = useState(product.count);
+
+  const [showFullDescription, setShowFullDescription] = useState(false);
 
   const showViewButton = (showViewProductButton) => {
     return (
@@ -229,10 +233,11 @@ const Card = ({
               <div className="p-4 ">
                 <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                   {shouldRedirect(redirect)}
+                
                   <ShowImage
                     item={product}
                     url="product"
-                    className="lg:h-48 md:h-36 w-full object-cover object-center"
+                    className=""
                     alt="blog"
                   />
                   <div className="p-6">
@@ -240,12 +245,22 @@ const Card = ({
                       {product.category && product.category.name}
                     </h2>
                     <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
-                      {product.name}The Catalyzer
+                      {product.name}
                     </h1>
-                    <p className="leading-relaxed mb-3">
-                      {product.description} Photo booth fam kinfolk cold-pressed
-                      sriracha leggings jianbing microdosing tousled waistcoat.
-                    </p>
+
+
+
+                    
+                    <p className="leading-relaxed mb-3 ">
+                    {showFullDescription 
+                      ? product.description
+                      : `${product.description.slice(0, 100)} ....`}
+                    <span className="font-bold" onClick={() => setShowFullDescription(!showFullDescription)}>
+                      {showFullDescription ? "  ....Show Less" : "Show More"}
+                    </span>
+                  </p>
+
+
                     <p className="my-2 text-[17px] font-bold text-[#0FB478]">₹ {product.price}</p>
                     {showStock(product.quantity)}
                     <br />
@@ -254,8 +269,8 @@ const Card = ({
                     {showAddToCart(showAddToCartButton)}
                     {showCartUpdateOptions(cartUpdate)}
                     <div className="flex items-center flex-wrap ">
-                      <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
-                        {moment(product.createdAt).fromNow()}Learn More
+                      <a href=" " className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
+                        {moment(product.createdAt).fromNow()}
                         <svg
                           className="w-4 h-4 ml-2"
                           viewBox="0 0 24 24"

@@ -5,6 +5,115 @@ import {isAuthenticated} from '../auth';
 import {getPurchaseHistory} from './apiUser';
 import moment from "moment";
 
+// const UserDashboard = () => {
+
+//     const {user: {_id, name, email, role}, token} = isAuthenticated();
+    
+//     const [history, setHistory] = useState([]);
+
+//     const init = (userId, token) => {
+//         getPurchaseHistory(userId, token).then(data => {
+//             if(data.error)
+//             {
+//                 console.log(data.error)
+//             }
+//             else
+//             {
+//                 setHistory(data);
+//             }
+//         })
+//     }
+
+//     useEffect(() => {
+//         init(_id, token)
+//         //eslint-disable-next-line
+//     }, [])
+
+//     const userLinks = () => {
+//         return (
+//             <div className="card mb-5">
+//                 <h4 className="card-header text-center">User Links</h4>
+//                 <ul className="list-group">
+//                     <li className="list-group-item"><Link to="/cart" className="nav-link">My Shopping Cart</Link></li>
+//                     <li className="list-group-item"><Link to={`/profile/${_id}`} className="nav-link">Update Profile</Link></li>
+//                 </ul>
+
+//             </div>
+//         )
+//     }
+
+//     const userInfo = () => {
+//         return (
+//             <div className="card mb-5">
+//             <h3 className="card-header text-center">User Information</h3>
+//             <ul className="list-group">
+//                 <li className="list-group-item">{name}</li>
+//                 <li className="list-group-item">{email}</li>
+//                 <li className="list-group-item">{role === 1 ? 'Admin': `User id : ${_id}`}</li>
+//             </ul>
+//             </div>
+//         )
+//     }
+
+//     const purchaseHistory = history => {
+//         return (
+//             <div className="card mb-5">
+//                 <h3 className="card-header">Purchase history</h3>
+//                 <ul className="list-group">
+//                     <li className="list-group-item">
+//                         {history.map((h, i) => {
+//                             return (
+//                                 <div>
+//                                     <hr />
+//                                     {h.products.map((p, i) => {
+//                                         return (
+//                                             <div key={i}>
+//                                                 <h6>Product name: {p.name}</h6>
+//                                                 <h6>
+//                                                     Product price: ${p.price}
+//                                                 </h6>
+//                                                 <h6>
+//                                                     Purchased date:{" "}
+//                                                     {moment(
+//                                                         p.createdAt
+//                                                     ).fromNow()}
+//                                                 </h6>
+//                                             </div>
+//                                         );
+//                                     })}
+//                                 </div>
+//                             );
+//                         })}
+//                     </li>
+//                 </ul>
+//             </div>
+//         );
+//     };
+
+
+//     return (
+//         <Layout title="Dashboard" description={`Welcome, ${name}`} className="container-fluid">
+//             <div className="row">
+//                 <div className="xs-col-12 col-sm-4">
+//                     {userLinks()}
+//                 </div>
+
+//                 <div className="xs-col-12 col-sm-8">
+//                     {userInfo()}
+//                     {purchaseHistory(history)}
+//                 </div>
+//             </div>
+//         </Layout>
+//     )
+// }
+
+// export default UserDashboard;
+
+
+///tl
+
+
+
 const UserDashboard = () => {
 
     const {user: {_id, name, email, role}, token} = isAuthenticated();
@@ -31,11 +140,11 @@ const UserDashboard = () => {
 
     const userLinks = () => {
         return (
-            <div className="card mb-5">
-                <h4 className="card-header text-center">User Links</h4>
-                <ul className="list-group">
-                    <li className="list-group-item"><Link to="/cart" className="nav-link">My Shopping Cart</Link></li>
-                    <li className="list-group-item"><Link to={`/profile/${_id}`} className="nav-link">Update Profile</Link></li>
+            <div className="mb-5   border rounded-lg h-fit w-fit overflow-hidden shadow-xl">
+                <h4 className="bg-black  w-fit text-white px-40 py-3 rounded-t">User Links</h4>
+                <ul className="list-group text-center">
+                    <li className="list-group-item text-center"><Link to="/cart" className=" grid  py-2 px-4 rounded hover:bg-gray-200 font-medium tracking-widest">My Shopping Cart</Link></li>
+                    <li className="list-group-item"><Link to={`/profile/${_id}`} className="grid  py-2 px-4 rounded hover:bg-gray-200 font-medium tracking-widest">Update Profile</Link></li>
                 </ul>
 
             </div>
@@ -44,67 +153,129 @@ const UserDashboard = () => {
 
     const userInfo = () => {
         return (
-            <div className="card mb-5">
-            <h3 className="card-header text-center">User Information</h3>
-            <ul className="list-group">
-                <li className="list-group-item">{name}</li>
-                <li className="list-group-item">{email}</li>
-                <li className="list-group-item">{role === 1 ? 'Admin': `User id : ${_id}`}</li>
-            </ul>
+            <div className="">      <div className=" mb-5  border w-fit overflow-hidden shadow-lg">
+            <h3 className="bg-black text-white px-20 py-2 text-center rounded-t">User Information</h3>
+            <div className="flex w-fit justify-arround  ">
+            <div>
+              <ul className="mt-7 mx-4 " >
+              <div className='flex'> <li className=" rounded w-fit px-2 px-2 tracking-widest font-bold ">{name}</li></div>
+              <div className='flex'>   <li className=" rounded w-fit px-2  mt-1 font-bold tracking-widest  mb-1">{email}</li></div>
+                <li className=" my-2 px-2 tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
+                  {role === 1 ? "Admin" : `User id : ${_id}`}
+                </li>
+              </ul>
             </div>
+            <div className="">
+              <img className="w-36"
+                src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553__340.png"
+                alt="/"
+              />
+            </div></div>
+          </div></div>
         )
     }
 
     const purchaseHistory = history => {
         return (
-            <div className="card mb-5">
-                <h3 className="card-header">Purchase history</h3>
-                <ul className="list-group">
-                    <li className="list-group-item">
-                        {history.map((h, i) => {
-                            return (
-                                <div>
-                                    <hr />
-                                    {h.products.map((p, i) => {
-                                        return (
-                                            <div key={i}>
-                                                <h6>Product name: {p.name}</h6>
-                                                <h6>
-                                                    Product price: ${p.price}
-                                                </h6>
-                                                <h6>
-                                                    Purchased date:{" "}
-                                                    {moment(
-                                                        p.createdAt
-                                                    ).fromNow()}
-                                                </h6>
-                                            </div>
-                                        );
-                                    })}
+            // <div className="card mb-5">
+            //     <h3 className="card-header">Purchase history</h3>
+            //     <ul className="list-group">
+            //         <li className="list-group-item">
+            //             {history.map((h, i) => {
+            //                 return (
+            //                     <div>
+            //                         <hr />
+            //                         {h.products.map((p, i) => {
+            //                             return (
+            //                                 <div key={i}>
+            //                                     <h6>Product name: {p.name}</h6>
+            //                                     <h6>
+            //                                         Product price: ${p.price}
+            //                                     </h6>
+            //                                     <h6>
+            //                                         Purchased date:{" "}
+            //                                         {moment(
+            //                                             p.createdAt
+            //                                         ).fromNow()}
+            //                                     </h6>
+            //                                 </div>
+            //                             );
+            //                         })}
+            //                     </div>
+            //                 );
+            //             })}
+            //         </li>
+            //     </ul>
+            // </div>
+            <div>
+                <header class="bg-gray-100">
+                    <div class="container mx-auto py-4 flex items-center justify-between">
+                        <a href="/" class="text-2xl font-bold">Purchase History</a>
+                    
+                    </div>
+                </header>
+                <div class="container mx-auto py-12">
+                    <div class="flex flex-wrap">
+                        <div class="w-full md:w-1/3 mb-8">
+                            <img src="https://dummyimage.com/600x400/000/fff" alt="Product Image" class="rounded-lg shadow-lg"/>
+                        </div>
+                        <div class="w-full md:w-1/2 px-4">
+                            <h1 class="text-3xl font-bold mb-4">Product Name</h1>
+                            <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor, risus sed vehicula tempor, eros elit bibendum elit, ac bibendum justo elit id odio. Maecenas auctor velit in sapien sollicitudin dapibus.</p>
+                            <div class="flex items-center mb-4">
+                                <span class="text-2xl font-bold mr-2">$99.00</span>
+                                <span class="text-gray-600">Was $129.00</span>
+                            </div>
+                         
+                            <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg mb-4">Add to Cart</button>
+                            <div class="flex items-center">
+                                <span class="text-gray-600 mr-2">Share:</span>
+                                <a href="#" class="text-gray-600 hover:text-blue-500 mr-2"><i class="fab fa-facebook-square"></i></a>
+                                <a href="#" class="text-gray-600 hover:text-blue-500 mr-2"><i class="fab fa-twitter-square"></i></a>
+                                <a href="#" class="text-gray-600 hover:text-blue-500"><i class="fab fa-instagram-square"></i></a>
                                 </div>
-                            );
-                        })}
-                    </li>
-                </ul>
-            </div>
+                                </div>
+                                </div>
+                                </div>
+                               </div>
+            
         );
     };
 
 
-    return (
-        <Layout title="Dashboard" description={`Welcome, ${name}`} className="container-fluid">
-            <div className="row">
-                <div className="xs-col-12 col-sm-4">
-                    {userLinks()}
-                </div>
+//     return (
+//         <Layout title="Dashboard" description={`Welcome, ${name}`} className="container-fluid">
+//             <div className="row">
+//                 <div className="xs-col-12 col-sm-4">
+//                     {userLinks()}
+//                 </div>
 
-                <div className="xs-col-12 col-sm-8">
-                    {userInfo()}
-                    {purchaseHistory(history)}
-                </div>
+//                 <div className="xs-col-12 col-sm-8">
+//                     {userInfo()}
+//                     {purchaseHistory(history)}
+//                 </div>
+//             </div>
+//         </Layout>
+//     )
+// }
+
+
+
+return (
+    <Layout title="Dashboard" description={`Welcome, ${name}`} className="container-fluid">
+        <div className="row">
+            <div className="flex flex justify-between mb-40">
+                {userLinks()}
+                {userInfo()}
             </div>
-        </Layout>
-    )
+
+            <div className="xs-col-12 col-sm-8">
+              
+                {purchaseHistory(history)}
+            </div>
+        </div>
+    </Layout>
+)
 }
 
 export default UserDashboard;

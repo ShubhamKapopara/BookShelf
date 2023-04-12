@@ -45,28 +45,31 @@ const ManageProducts = props => {
 
     return (
         <Layout title="Manage Products" description={`Perform CRUD on products`}>
-            <div className="row">
-                <div className="col-12">
-                <h2 className="text-center">Total {products.length} Products</h2>
-                <hr />
-                    <ul className="list-group">
-                        {products.map((p, i) => (
-                            <li key={i} className="list-group-item d-flex justify-content-between align-items-center">
-                                <div style={{maxWidth:"300px", width:"100%"}}><strong>{p.name}</strong></div>
-                                <div><Link to={`/admin/products/update/${p._id}`}>
-                                    <span className="badge badge-warning badge-pill">
-                                        Update
-                                    </span>
-                                </Link></div><div>
-                                <span onClick={() => destroy(p._id)} className="badge badge-danger badge-pill">
-                                    Delete
-                                </span></div>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </div>
-        </Layout>
+        <div className="w-full max-w-2xl mx-auto ">
+          <div className="col-12">
+            <h2 className="text-center font-bold text-xl mb-4">Total {products.length} Products</h2>
+            <hr className="mb-8" />
+            <ul className="space-y-4">
+              {products.map((p, i) => (
+                <li key={i} className="flex justify-between items-center py-4 px-6 bg-white shadow-lg rounded-lg">
+                  <div className="w-3/5 max-w-xs">{p.name}</div>
+                  <div className="flex items-center justify-end space-x-4">
+                    <Link to={`/admin/products/update/${p._id}`}>
+                      <span className="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded">
+                        ✏️ Update
+                      </span>
+                    </Link>
+                    <span onClick={() => destroy(p._id)} className="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded">
+                      🗑️ Delete
+                    </span>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </Layout>
+      
     )
 }
 

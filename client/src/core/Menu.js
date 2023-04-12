@@ -97,8 +97,8 @@ const isActive = (history, path) => {
 const Menu = ({ history }) => {
   return (
     <div>
-      <div className="border-b-2 fixed  top-0 left-0 right-0  text-slate-100 flex bg-white ">
-        <div className="h w-16 mr-8">
+      <div className="h-16 fixed  top-0 left-0 right-0  text-slate-900 flex bg-white overflow-hidden shadow-lg ">
+        <div className=" w-16 mr-8">
           <img src={logo} alt="" />
         </div>
         <div className="flex items-center justify-around gap-10  ">
@@ -151,7 +151,7 @@ const Menu = ({ history }) => {
 
         {isAuthenticated() && (
           <Fragment>
-            <div className="flex items-center justify-around mx-10 gap-8">
+            <div className="flex items-center justify-around mx-10 gap-8 ">
               {isAuthenticated().user.role === 0 && (
                 <div className=" hover:bg-slate-100 p-2 rounded">
                   <Link

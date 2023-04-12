@@ -322,6 +322,8 @@ import { prices } from "./FixedPrices";
 //
 
 
+
+
 const Shop = () => {
     const [myFilters, setMyFilters] = useState({
         filters: { category: [], price: [] }
@@ -427,15 +429,19 @@ const Shop = () => {
         }
         return array;
     };
+ 
+    
 
     return (
         <Layout
             title="Shop Page"
             description="Search And Find Books Of Your Choice"
-            className="container-fluid"
+            className=""
         >
-            <div className="max-w-7xl">
-                <div className="bg-green-100 max-w-sm p-10">
+    
+        <div className="flex w-full">
+            <div className="w-full">
+                <div className="bg-green-100 max-w-xs p-10">
                     <h4 className="border-y border-black mb-2">Filter By Categories</h4>
                     <ul>
                         <Checkbox
@@ -455,12 +461,13 @@ const Shop = () => {
                             }
                         />
                     </div>
-                </div>
+                </div> </div>
+                
 
-                <div className="col-8">
-                    <h2 className="bg-gradient-to-r from-gray-800 to-black my-10 text-white font-bold p-2">Products</h2>
+                <div className="">
+                    <h2 className="bg-gradient-to-r from-gray-800 to-black text-center text-white font-bold p-2">Products</h2>
                     {showLoading()}
-                    <div className="max-w-3xl">
+                    <div className="max-w-7xl w-full">
                         {filteredResults.map((product, i) => (
                             <div key={i} className="  mb-3">
                                 <Card product={product} />
@@ -469,8 +476,8 @@ const Shop = () => {
                     </div>
                     <hr />
                     {loadMoreButton()}
-                </div>
-            </div>
+                </div></div>
+           
         </Layout>
     );
 };

@@ -17,13 +17,15 @@ import UpdateProduct from "./admin/UpdateProduct";
 import Orders from "./admin/Orders";
 import ManageProducts from "./admin/ManageProducts";
 import About from "./core/About";
+import ErrorPage from "./core/404.js"
 
 const Routes = () => {
   return (
     <BrowserRouter>
       <Switch>
+      
         <Route exact path="/" component={Home} />
-       // <Route exact path="/shop" component={Shop} />
+       <Route exact path="/shop" component={Shop} />
         <Route exact path="/product/:productId" component={Product} />
         <Route exact path="/signin" component={Signin} />
         <Route exact path="/signup" component={Signup} />
@@ -41,6 +43,7 @@ const Routes = () => {
         />
         <AdminRoute exact path="/admin/orders" component={Orders} />
         <AdminRoute exact path="/admin/products" component={ManageProducts} /> 
+        <Route exact path="*" component={ErrorPage} />
       </Switch>
     </BrowserRouter>
   );
