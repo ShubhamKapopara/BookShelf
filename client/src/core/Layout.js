@@ -27,13 +27,13 @@ const Layout = ({ title = 'Title', description = 'Description', className, child
     <div className="flex flex-col min-h-screen">
       <Menu />
 
-      <header className="bg-gradient-to-r from-gray-800 to-black text-white py-5 text-center text-3xl mt-16">
+      <header className="bg-gradient-to-r from-gray-800 to-black text-white py-3 text-center text-3xl mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center items-center">
         
-            <h2 className="text-3xl font-extrabold">{title}</h2>
+            <h2 className="text-3xl font-extrabold tracking-widest">{title}</h2>
           </div>
-          <p className="mt-2 text-xl">{description}</p>
+          <p className="mt-2 text-xl tracking-widest">{description}</p>
         </div>
       </header>
       

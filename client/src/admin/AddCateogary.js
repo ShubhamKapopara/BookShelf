@@ -63,13 +63,13 @@ const AddCateogary = () => {
 
   const showSuccess = () => {
     if (success) {
-      return <h3 className="text-success">{name} is created</h3>;
+      return <h3 className="w-full max-w-3xl text-center bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded relative mb-4">{name} is created</h3>;
     }
   };
 
   const showError = () => {
     if (error) {
-      return <h3 className="text-danger">{name} is not unique</h3>;
+      return <div className="flex justify-center"><h3 className="w-full max-w-xl bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4 text-center">{name} is not unique</h3></div>
     }
   };
 
@@ -79,7 +79,7 @@ const AddCateogary = () => {
       description={`Ready to add a new category?`}
     >
       <div className="row">
-        <div className="xs-col-12 col-sm-8">
+        <div className="block w-full xs:w-auto xs:col-12 sm:col-span-8">
           {showSuccess()}
           {showError()}
           {newCategoryForm()}

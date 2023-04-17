@@ -134,7 +134,7 @@ const Card = ({
     return (
       showViewProductButton && (
         <Link to={`/product/${product._id}`} className="mr-2">
-          <button className="my-5 px-4 py-3 font-medium tracking-wide text-center capitalize transition-colors duration-300  bg-[#FFC933] rounded-[14px] hover:bg-[#FFC933DD] focus:outline-none focus:ring focus:ring-teal-300 focus:ring-opacity-80">
+          <button className="my-4 mr-2 px-4 py-2 font-medium tracking-wide text-center capitalize transition-colors duration-300  bg-[#FFC933] rounded-[14px] hover:bg-[#FFC933DD] focus:outline-none focus:ring focus:ring-teal-300 focus:ring-opacity-80">
             View Product
           </button>
         </Link>
@@ -159,7 +159,7 @@ const Card = ({
       showAddToCartButton && (
         <button
           onClick={addToCart}
-          className="my-5 px-4 py-3 bg-slate-100 font-medium tracking-wide text-center capitalize transition-colors duration-300  rounded-[14px] hover:bg-[#F2ECE7] hover:text-[#000000dd] focus:outline-none focus:ring focus:ring-teal-300 focus:ring-opacity-80"
+          className="my-4 px-4 py-2 bg-slate-100 font-medium tracking-wide text-center capitalize transition-colors duration-300  rounded-[14px] hover:bg-[#F2ECE7] hover:text-[#000000dd] focus:outline-none focus:ring focus:ring-teal-300 focus:ring-opacity-80"
         >
           Add to Cart
         </button>
@@ -185,11 +185,11 @@ const Card = ({
 
   const showStock = (quantity) => {
     return quantity > 0 ? (
-      <span className="inline-block px-2 py-1 text-sm font-semibold text-blue-900 bg-blue-100 rounded-full">
+      <span className="inline-block px-2 py-1 text-xs tracking-wide font-semibold text-blue-900 bg-blue-100 rounded-full">
         In Stock
       </span>
     ) : (
-      <span className="inline-block px-2 py-1 text-sm font-semibold text-white bg-red-500 rounded-full">
+      <span className="inline-block px-2 py-1 text-xs font-semibold text-white bg-red-500 rounded-full">
         Out of Stock
       </span>
     );
@@ -269,8 +269,10 @@ const Card = ({
                     {showAddToCart(showAddToCartButton)}
                     {showCartUpdateOptions(cartUpdate)}
                     <div className="flex items-center flex-wrap ">
-                      <a href=" " className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
-                        {moment(product.createdAt).fromNow()}
+                      <a href=" " className="text-indigo-500 inline-flex items-center text-sm md:mb-2 lg:mb-0">
+                      {moment(product.createdAt).fromNow().split(' ').map((s) => s.charAt(0).toUpperCase() + s.slice(1)).join(' ')}
+
+
                         <svg
                           className="w-4 h-4 ml-2"
                           viewBox="0 0 24 24"

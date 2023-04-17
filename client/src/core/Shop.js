@@ -385,7 +385,7 @@ const Shop = () => {
             size > 0 &&
             size >= limit && (
                 <div className="text-center">
-                    <button onClick={loadMore} className="bg-yellow-500 text-white mb-5">
+                    <button onClick={loadMore} className="my-4 px-4 py-2 bg-slate-100 font-medium tracking-wide text-center capitalize transition-colors duration-300  rounded-[14px] hover:bg-[#F2ECE7] hover:text-[#000000dd] focus:outline-none focus:ring focus:ring-teal-300 focus:ring-opacity-80">
                         Load more
                     </button>
                 </div>
@@ -439,9 +439,9 @@ const Shop = () => {
             className=""
         >
     
-        <div className="flex w-full">
-            <div className="w-full">
-                <div className="bg-green-100 max-w-xs p-10">
+        <div className="flex w-full justify-between ">
+            <div className="w-1/2 p">
+                <div className="px-6 py-6 text-black bg-slate-200 max-w-xs shadow p-10">
                     <h4 className="border-y border-black mb-2">Filter By Categories</h4>
                     <ul>
                         <Checkbox
@@ -452,7 +452,7 @@ const Shop = () => {
                         />
                     </ul>
 
-                    <h4 className="border-y border-black my-2">Filter By Price Range</h4>
+                    <h4 className="border-y border-b border-black my-2">Filter By Price Range</h4>
                     <div>
                         <RadioBox
                             prices={prices}
@@ -464,10 +464,10 @@ const Shop = () => {
                 </div> </div>
                 
 
-                <div className="">
-                    <h2 className="bg-gradient-to-r from-gray-800 to-black text-center text-white font-bold p-2">Products</h2>
+                <div className="w-full max-w-5xl">
+                    <h2 className=" bg-gradient-to-r from-gray-800 to-black text-center text-white font-bold p-2">Products</h2>
                     {showLoading()}
-                    <div className="max-w-7xl w-full">
+                    <div className="">
                         {filteredResults.map((product, i) => (
                             <div key={i} className="  mb-3">
                                 <Card product={product} />

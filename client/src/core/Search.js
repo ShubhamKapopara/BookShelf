@@ -209,16 +209,16 @@ const Search = () => {
 
     const searchForm = () => (
         <form onSubmit={searchSubmit}>
-            <div className="flex justify-center bg-red-200 py-5 ">
+            <div className="flex justify-center  py-5 ">
                 <div className="flex justify-between gap-4 ">
                     <div className="">
                         <select
                         className="px-4 py-2 text-gray-700 bg-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white"
                         onChange={handleChange("category")}
                         >
-                            <option value="All">All Categories</option>
+                            <option  className="px-4 py-2 text-gray-700 bg-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white" value="All">All Categories</option>
                             {categories.map((c, i) => (
-                                <option key={i} value={c._id}>
+                                <option  className="px-4 py-2 text-gray-700 bg-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white" key={i} value={c._id}>
                                     {c.name}
                                 </option>
                             ))}
@@ -227,12 +227,12 @@ const Search = () => {
 
                     <input
                         type="search"
-                        className="px-4 py-2 text-gray-700 bg-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white"
+                        className="text-sm bg-gray-200 appearance-none rounded w-96 max-w-2xl py-2 px-3 text-gray-700 mb-1 leading-tight focus:outline-none focus:shadow-outline h-10"
                         onChange={handleChange("search")}
                         placeholder="Search By Name"
                     />
                     <div
-                    className="inline-flex items-center justify-center px-4 py-2 text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-800"
+                    className="w-fit bg-gray-800 hover:bg-grey-900 text-white text-sm py-2 px-4 font-semibold rounded focus:outline-none focus:shadow-outline h-10"
                     style={{ border: "none" }}
                     > 
                         <button className="input-group-text">Search</button>

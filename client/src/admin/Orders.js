@@ -83,7 +83,7 @@ export const Orders = () => {
         else
         {
             return (
-                <h1 className="text-danger">No Orders</h1>
+                <h1 className="font-bold text-2xl max-w-2xl mx-auto text-center h-fit py-5 w-fu text-sm bg-gray-200 appearance-none rounded w-full py-2 px-3 text-gray-700 mb-1 leading-tight focus:outline-none focus:shadow-outline ">No Orders</h1>
             )
         }
     }
@@ -98,7 +98,7 @@ export const Orders = () => {
     }
 
     const showLoading = () => (
-        loading && (<div className="alert alert-success">
+        loading && (<div className="w-full mx-auto max-w-3xl text-center text-green-500">
             <h2>Loading...</h2>
         </div>)
     )
