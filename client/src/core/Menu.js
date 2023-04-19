@@ -4,6 +4,7 @@ import { signout, isAuthenticated } from "../auth";
 import { itemTotal } from "./cartHelpers";
 import logo from "../assets/logo-5.jpg";
 
+
 // const isActive = (history, path) => {
 //     if (history.location.pathname === path) {
 //         return { color: '#ff9900' }
@@ -97,7 +98,7 @@ const isActive = (history, path) => {
 const Menu = ({ history }) => {
   return (
     <div>
-      <div className="h-16 fixed  top-0 left-0 right-0  text-slate-900 flex bg-white overflow-hidden shadow-lg ">
+      <div className="z-50 h-16 fixed  top-0 left-0 right-0  text-slate-900 flex bg-white overflow-hidden shadow-lg ">
         <div className=" w-16 mr-8">
           <img src={logo} alt="" />
         </div>
@@ -212,6 +213,8 @@ const Menu = ({ history }) => {
           </Fragment>
         )}
       </div>
+     
+      
     </div>
   );
 };

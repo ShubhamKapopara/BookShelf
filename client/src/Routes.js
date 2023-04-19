@@ -18,6 +18,7 @@ import Orders from "./admin/Orders";
 import ManageProducts from "./admin/ManageProducts";
 import About from "./core/About";
 import ErrorPage from "./core/404.js"
+import UpdatePassword from "./user/forgot"
 
 const Routes = () => {
   return (
@@ -30,6 +31,7 @@ const Routes = () => {
         <Route exact path="/product/:productId" component={Product} />
         <Route exact path="/signin" component={Signin} />
         <Route exact path="/signup" component={Signup} />
+        <Route exact path="/forgot" component={UpdatePassword} />
         <Route exact path="/cart" component={Cart} />
         <Route exact path="/about" component={About} />
         <PrivateRoute exact path="/user/dashboard" component={UserDashboard} />
@@ -37,6 +39,7 @@ const Routes = () => {
         <AdminRoute exact path="/admin/dashboard" component={AdminDashboard} />
         <AdminRoute exact path="/create/category" component={AddCategory} />
         <AdminRoute exact path="/create/product" component={AddProduct} />
+        
         <AdminRoute
           exact
           path="/admin/products/update/:productId"

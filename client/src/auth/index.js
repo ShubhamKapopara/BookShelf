@@ -73,3 +73,24 @@ export const isAuthenticated = () => {
         return false;
     }
 }
+
+// forgot password
+
+export const Forgot = async (user) => {
+  return fetch(`/api/updatepassword`, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(user),
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+

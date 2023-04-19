@@ -49,7 +49,7 @@ const Cart = () => {
 
             
             <div className="col-6">
-                <h2 className="mb-4">Cart summary</h2>
+                <h2 className="mb-4 font-medium text-2xl">Cart summary</h2>
                 <hr />
                 <Checkout products={items} />
             </div>

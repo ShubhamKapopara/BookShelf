@@ -197,12 +197,13 @@ const Search = () => {
             <div>
                 <h2 className="mt-4 mb-4 text-lg font-medium text-gray-700">
                     {searchMessage(searched, results)}    
-                </h2>    
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                </h2>  
+                <div className=" w-full max-w-lg">
+                <div className="grid gap-6">
                     {results.map((product, i) => (
                         <Card key={i} product={product} />
                     ))}
-                </div>
+                </div></div>  
             </div>
         );
     };

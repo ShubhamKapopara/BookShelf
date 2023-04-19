@@ -1,40 +1,40 @@
 import React from "react";
-import logo from "../assets/slide-1.jpg";
-import logo1 from "../assets/slide-2.jpg";
-import logo2 from "../assets/slide-3.jpg";
-import logo3 from "../assets/slide-4.jpg";
-import logo4 from "../assets/slide-5.jpg";
+import logo from "../assets/1.jpeg";
+import logo1 from "../assets/2.jpeg";
+import logo2 from "../assets/3.jpeg";
+import logo3 from "../assets/4.jpeg";
+import logo4 from "../assets/8.jpg";
 
 function SliderImg() {
   return (
     <div>
-    <div id=" sticky  default-carousel" className="relative w-full my-10 mb-40" data-carousel="slide">
+    <div id=" sticky  default-carousel" className="relative w-full my-10 h-96" data-carousel="slide">
 
-        <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
+        <div className="relative  overflow-hidden md:h-96">
 
             <div className="hidden duration-700 ease-in-out" data-carousel-item>
                 <img src={logo}
-                className="max-w-3xl h-full rounded-lg  absolute block  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
+                className="w-full rounded-xl  max-h-3xl  absolute block  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
             </div>
 
             <div className="hidden duration-700 ease-in-out" data-carousel-item>
                 <img src={logo1}
-                className="max-w-3xl h-full rounded-lg absolute block  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
+                className="w-full  rounded-xl  absolute block  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
             </div>
 
             <div className="hidden duration-700 ease-in-out" data-carousel-item>
                 <img src={logo2}
-                className="max-w-3xl h-full rounded-xl  absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
+                className="w-full   rounded-xl  absolute block -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
             </div>
 
             <div className="hidden duration-700 ease-in-out" data-carousel-item>
                 <img src={logo3}
-                className="max-w-3xl h-full rounded-lg absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
+                className="w-full  rounded-xl  absolute block  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
             </div>
 
             <div className="hidden duration-700 ease-in-out" data-carousel-item>
                 <img src={logo4}
-                className="max-w-3xl h-full rounded-lg  absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
+                className="w-full  rounded-xl  h-full  absolute block  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
             </div>
         </div>
 

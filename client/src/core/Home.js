@@ -4,7 +4,7 @@ import { getProducts } from "./apiCore";
 import Card from "./Card";
 import Search from "./Search";
 //
-// import SliderImg from "./Slider"
+import SliderImg from "./Slider";
 //
 
 const Home = () => {
@@ -53,9 +53,13 @@ const Home = () => {
   }, []);
 
   return (
-    <Layout title="THE BOOKSHELF " description="Buy Some Awesome Books Now">
+<>
+   
 
+    <Layout title="THE BOOKSHELF " description="Buy Some Awesome Books Now">
+    <div className=""><SliderImg/></div>
       <Search />
+
 
       <h2 className="text-3xl font-bold mb-4">New Arrivals</h2>
       {showLoading()}
@@ -76,7 +80,7 @@ const Home = () => {
           </div>
         ))}
       </div>
-    </Layout>
+    </Layout> </>
   );
 };
 
