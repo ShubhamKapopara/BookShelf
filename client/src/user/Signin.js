@@ -248,9 +248,9 @@ const Signin = () => {
 
   const signUpForm = () => (
       <form className='container max-w-md mx-auto xl:max-w-3xl h-full flex bg-white rounded-lg shadow overflow-hidden justify-between'>
-      <div class=" hidden xl:block xl:w-1/2 h-96">
+      <div className=" hidden xl:block xl:w-1/2 h-96">
       <img  
-        class=" h-auto  w-full object-cover"
+        className=" h-auto  w-full object-cover"
         src="https://images.unsplash.com/photo-1541233349642-6e425fe6190e"
         alt="my zomato"
       />
@@ -281,7 +281,7 @@ const Signin = () => {
         />
       </div>
       <a
-      class="inline-block align-baseline text-sm text-gray-600 hover:text-gray-800"
+      className="inline-block align-baseline text-sm text-gray-600 hover:text-gray-800"
       href="/forgot"
     >
       Forgot Password?
@@ -293,10 +293,10 @@ const Signin = () => {
         </button>
       </div>
       <div className='mt-4 justify-between '>
-    <span class="text-gray-600 text-sm mr-1">
+    <span className="text-gray-600 text-sm mr-1">
       Don't have an account?
     </span>
-    <span class="text-gray-700 text-sm font-semibold">
+    <span className="text-gray-700 text-sm font-semibold">
      <Link to="/signup"> Sign in</Link>
     </span>
   </div>

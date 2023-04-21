@@ -205,9 +205,9 @@ const UserDashboard = () => {
   const purchaseHistory = (history) => {
     return (
       <div className="card mb-5">
-        <header class="bg-gray-100 ">
-          <div class="container mx-auto py-4 flex items-center justify-between ">
-            <a href="/" class="text-2xl font-bold">
+        <header className="bg-gray-100 ">
+          <div className="container mx-auto py-4 flex items-center justify-between ">
+            <a href="/" className="text-2xl font-bold">
               Purchase History
             </a>
           </div>
@@ -221,25 +221,25 @@ const UserDashboard = () => {
                   {h.products.map((p, i) => {
                     return (
                       <div key={i}>
-                        <div class="flex flex-wrap">
-                          <div class="w-full md:w-1/3 mb-8">
+                        <div className="flex flex-wrap">
+                          <div className="w-full md:w-1/3 mb-8">
                             <img
                               src="https://dummyimage.com/600x400/000/fff"
-                              alt="Product Image"
-                              class="rounded-lg shadow-lg"
+                              alt="Product"
+                              className="rounded-lg shadow-lg"
                             />
                           </div>
-                          <div class="w-full md:w-1/2 px-4">
-                            <h1 class="text-3xl font-bold mb-4 mt-2"> {p.name}</h1>
-                            <p class="text-gray-600 mb-4">
+                          <div className="w-full md:w-1/2 px-4">
+                            <h1 className="text-3xl font-bold mb-4 mt-2"> {p.name}</h1>
+                            <p className="text-gray-600 mb-4">
                               Lorem ipsum dolor sit amet, consectetur adipiscing
                               elit. Duis auctor, risus sed vehicula tempor, eros
                               elit bibendum elit, ac bibendum justo elit id
                               odio. Maecenas auctor velit in sapien sollicitudin
                               dapibus.
                             </p>
-                            <div class="flex items-center mb-4">
-                              <span class="text-2xl font-bold mr-2">
+                            <div className="flex items-center mb-4">
+                              <span className="text-2xl font-bold mr-2">
                               ₹
                               {p.price}
                               </span>

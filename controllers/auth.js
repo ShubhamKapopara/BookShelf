@@ -58,30 +58,60 @@ exports.signup = async (req, res) => {
 };
 
 // Signin existing user
+// exports.signin = async (req, res) => {
+//   // find user based on email
+//   const { email, password } = req.body;
+
+//   const user = await User.findOne({ email:email,password:password });
+
+//   // If user is found
+//   if (user) {
+//     // make sure email and password match
+//     // create authenticate method in user model
+//     if (!user) {
+//       return res.status(401).json({ err: "Invalid Credentials" });
+//     }
+
+//     // generate a signed token with user id and secret
+//     const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET);
+
+//     // persist the token as 't' in cookie with expiry date
+//     res.cookie("t", token, { expire: new Date() + 9999 });
+
+//     // return response with user and send to client
+//     const { _id, name, email, role } = user;
+//     return res.json({ token, user: { _id, name, email, role } });
+//   } else return res.status(400).json({ err: "Email not fuond" });
+// };
+
+
+
+
 exports.signin = async (req, res) => {
-  // find user based on email
-  const { email, password } = req.body;
-
-  const user = await User.findOne({ email });
-
-  // If user is found
-  if (user) {
-    // make sure email and password match
-    // create authenticate method in user model
-    if (!user) {
-      return res.status(401).json({ err: "Invalid Credentials" });
+  try {
+    const { email, password } = req.body;
+    if (!(email && password)) {
+      return res.status(400).send("All input is required");
     }
-
-    // generate a signed token with user id and secret
+    const user = await User.findOne({ email: email });
+    // console.log("Fetchd data : ", user);
+  
+    if (user && bcrypt.compareSync(password, user.password)){
     const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET);
 
-    // persist the token as 't' in cookie with expiry date
-    res.cookie("t", token, { expire: new Date() + 9999 });
-
-    // return response with user and send to client
-    const { _id, name, email, role } = user;
-    return res.json({ token, user: { _id, name, email, role } });
-  } else return res.status(400).json({ err: "Email not fuond" });
+        // persist the token as 't' in cookie with expiry date
+        res.cookie("t", token, { expire: new Date() + 9999 });
+    
+        // return response with user and send to client
+        const { _id, name, email, role } = user;
+        return res.status(200).json({ token, user: { _id, name, email, role } });
+    
+    }else     
+    res.status(404).json({err:"Invalid Credentials"});
+  } catch (err) {
+    console.log("error: ", err);
+    res.status(401).send({ message: err });
+  }
 };
 
 // Signout User

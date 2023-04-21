@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { signout, isAuthenticated } from "../auth";
 import { itemTotal } from "./cartHelpers";
-import logo from "../assets/logo-5.jpg";
+import logo from "../assets/logoblack-1.jpg";
 
 
 // const isActive = (history, path) => {
@@ -99,7 +99,7 @@ const Menu = ({ history }) => {
   return (
     <div>
       <div className="z-50 h-16 fixed  top-0 left-0 right-0  text-slate-900 flex bg-white overflow-hidden shadow-lg ">
-        <div className=" w-16 mr-8">
+        <div className=" lg:w-56 sm:w-96">
           <img src={logo} alt="" />
         </div>
         <div className="flex items-center justify-around gap-10  ">

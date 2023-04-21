@@ -329,7 +329,7 @@ const Checkout = ({ products }) => {
             }}
             onInstance={(instance) => (data.instance = instance)}
           />
-           <button onClick={buy} className="w-full max-w-xs mt-4 bg-green-500 hover:bg-green-600 text-white text-sm py-2 px-4 font-semibold rounded focus:outline-none focus:shadow-outline h-10" style={{display: data.success ? "none" : "" }}>
+           <button onClick={buy} className=" flex justify-center mx-auto w-full max-w- mt-4 bg-green-500 hover:bg-green-600 text-white text-sm py-2 px-4 font-semibold rounded focus:outline-none focus:shadow-outline h-10" style={{display: data.success ? "none" : "" }}>
                         Pay
                     </button> 
         </div>

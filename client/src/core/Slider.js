@@ -3,7 +3,7 @@ import logo from "../assets/1.jpeg";
 import logo1 from "../assets/2.jpeg";
 import logo2 from "../assets/3.jpeg";
 import logo3 from "../assets/4.jpeg";
-import logo4 from "../assets/8.jpg";
+import logo4 from "../assets/9.jpg";
 
 function SliderImg() {
   return (
