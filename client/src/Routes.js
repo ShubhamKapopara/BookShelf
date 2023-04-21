@@ -19,6 +19,7 @@ import ManageProducts from "./admin/ManageProducts";
 import About from "./core/About";
 import ErrorPage from "./core/404.js"
 import UpdatePassword from "./user/forgot"
+import Thankyou from "./core/thankyou";
 
 const Routes = () => {
   return (
@@ -34,6 +35,7 @@ const Routes = () => {
         <Route exact path="/forgot" component={UpdatePassword} />
         <Route exact path="/cart" component={Cart} />
         <Route exact path="/about" component={About} />
+        <Route exact path="/thankyou" component={Thankyou} />
         <PrivateRoute exact path="/user/dashboard" component={UserDashboard} />
         <PrivateRoute exact path="/profile/:userId" component={Profile} />
         <AdminRoute exact path="/admin/dashboard" component={AdminDashboard} />

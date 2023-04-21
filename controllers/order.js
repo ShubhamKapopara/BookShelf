@@ -52,8 +52,8 @@ exports.create = (req, res) => {
     // Send order confirmation email to user and admin
     let HelperOptions ={
 
-        from : process.env.NAME + '<'+ (process.env.EMAILID)+'>' ,
-        to : "anant.mathur007@gmail.com",
+        from : '<'+ (process.env.EMAILID)+'>' ,
+        to : "191260107012setice@gmail.com",
         subject : "Hey admin, a purchase has been made!",
         text : "Hello Anant, \n\nA purchase of Rs. " + req.body.order.amount + " has been made by " + req.profile.name + "\n\nRegards, \nDev Bookstore"
     };

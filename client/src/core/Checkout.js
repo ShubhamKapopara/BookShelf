@@ -188,6 +188,7 @@ import { emptyCart } from "./cartHelpers";
 import { isAuthenticated } from "../auth";
 import { Link } from "react-router-dom";
 import DropIn from "braintree-web-drop-in-react";
+import { useHistory } from "react-router-dom";
 
 const Checkout = ({ products }) => {
   const [data, setData] = useState({
@@ -198,6 +199,8 @@ const Checkout = ({ products }) => {
     instance: {},
     address: "",
   });
+
+  const history = useHistory();
 
   const userId = isAuthenticated() && isAuthenticated().user._id;
   const token = isAuthenticated() && isAuthenticated().token;
@@ -281,6 +284,7 @@ const Checkout = ({ products }) => {
                     loading: false,
                     success: true,
                   });
+                  {history.push("/thankyou")}
                 });
                 setTimeout(() => window.location.reload(), 2200);
               })
@@ -325,7 +329,7 @@ const Checkout = ({ products }) => {
             }}
             onInstance={(instance) => (data.instance = instance)}
           />
-           <button onClick={buy} className="w-full max-w-xs mt-4 bg-gray-800 hover:bg-grey-900 text-white text-sm py-2 px-4 font-semibold rounded focus:outline-none focus:shadow-outline h-10" style={{display: data.success ? "none" : "" }}>
+           <button onClick={buy} className="w-full max-w-xs mt-4 bg-green-500 hover:bg-green-600 text-white text-sm py-2 px-4 font-semibold rounded focus:outline-none focus:shadow-outline h-10" style={{display: data.success ? "none" : "" }}>
                         Pay
                     </button> 
         </div>
