@@ -39,14 +39,17 @@ const AddCateogary = () => {
     <form>
       <div className="mx-auto w-full max-w-xl   bg-white rounded-lg shadow overflow-hidden  flex justify-center py-2">
         <label className="font-semibold py-3">Name :</label>
-       <div className="w-64 mt-1 ml-2"> <input
-          onChange={handleChange}
-          type="name"
-          className="text-sm bg-gray-200 appearance-none rounded w-full py-2 px-3 text-gray-700 mb-1 leading-tight focus:outline-none focus:shadow-outline h-10"
-          value={name}
-          placeholder="Enter your catagery name"
-          required
-        /></div>  
+        <div className="w-64 mt-1 ml-2">
+          {" "}
+          <input
+            onChange={handleChange}
+            type="name"
+            className="text-sm bg-gray-200 appearance-none rounded w-full py-2 px-3 text-gray-700 mb-1 leading-tight focus:outline-none focus:shadow-outline h-10"
+            value={name}
+            placeholder="Enter your catagery name"
+            required
+          />
+        </div>
         <div className="ml-2 mt-1">
           <button
             onClick={clickSubmit}
@@ -55,21 +58,30 @@ const AddCateogary = () => {
             Submit
           </button>
         </div>
-        <div></div></div>
-    
+        <div></div>
+      </div>
     </form>
-
   );
 
   const showSuccess = () => {
     if (success) {
-      return <h3 className="w-full max-w-3xl text-center bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded relative mb-4">{name} is created</h3>;
+      return (
+        <h3 className="w-full max-w-3xl text-center bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded relative mb-4">
+          {name} is created
+        </h3>
+      );
     }
   };
 
   const showError = () => {
     if (error) {
-      return <div className="flex justify-center"><h3 className="w-full max-w-xl bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4 text-center">{name} is not unique</h3></div>
+      return (
+        <div className="flex justify-center">
+          <h3 className="w-full max-w-xl bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4 text-center">
+            {name} is not unique
+          </h3>
+        </div>
+      );
     }
   };
 

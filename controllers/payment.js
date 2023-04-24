@@ -3,9 +3,9 @@ const stripe = require("stripe")(
 );
 
 const checkOut = async (req, res, next) => {
-    const username= req.body.username;
-    const quantity=req.body.quantity;
-    const price = req.body.price;
+  const username = req.body.username;
+  const quantity = req.body.quantity;
+  const price = req.body.price;
   try {
     const payment_session = await stripe.checkOut.session.create({
       customer: username,
@@ -14,7 +14,7 @@ const checkOut = async (req, res, next) => {
       line_items: [
         {
           price: price,
-          quantity:quantity,
+          quantity: quantity,
         },
       ],
       success_url: "",

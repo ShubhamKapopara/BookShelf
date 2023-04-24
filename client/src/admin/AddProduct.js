@@ -1,12 +1,12 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Layout from "../core/Layout";
-import {isAuthenticated} from "../auth";
-import {useHistory} from "react-router-dom";
-import {createProduct, getCategories} from "./ApiAdmin";
+import { isAuthenticated } from "../auth";
+import { useHistory } from "react-router-dom";
+import { createProduct, getCategories } from "./ApiAdmin";
 
 const AddProduct = () => {
   let history = useHistory();
-  const {user, token} = isAuthenticated();
+  const { user, token } = isAuthenticated();
   const [values, setValues] = useState({
     name: "",
     description: "",
@@ -40,9 +40,9 @@ const AddProduct = () => {
   const init = () => {
     getCategories().then((data) => {
       if (data.err) {
-        setValues({...values, error: data.err});
+        setValues({ ...values, error: data.err });
       } else {
-        setValues({...values, categories: data, formData: new FormData()});
+        setValues({ ...values, categories: data, formData: new FormData() });
       }
     });
   };
@@ -56,16 +56,16 @@ const AddProduct = () => {
   const handleChange = (name) => (e) => {
     const value = name === "photo" ? e.target.files[0] : e.target.value;
     formData.set(name, value);
-    setValues({...values, [name]: value});
+    setValues({ ...values, [name]: value });
   };
 
   const clickSubmit = (e) => {
     e.preventDefault();
-    setValues({...values, error: "", loading: true});
+    setValues({ ...values, error: "", loading: true });
 
     createProduct(user._id, token, formData).then((data) => {
       if (data.err) {
-        setValues({...values, error: data.err});
+        setValues({ ...values, error: data.err });
       } else {
         setValues({
           ...values,
@@ -86,8 +86,6 @@ const AddProduct = () => {
 
   const newPostForm = () => (
     <form className="w-full max-w-2xl mx-auto" onSubmit={clickSubmit}>
-      
-
       <div className="form-group">
         <label>Name</label>
         <input
@@ -133,7 +131,7 @@ const AddProduct = () => {
             ))}
         </select>
       </div>
- 
+
       <div className="my-2">
         <label>Shipping</label>
         <select
@@ -146,8 +144,6 @@ const AddProduct = () => {
           <option value="1">Yes</option>
         </select>
       </div>
-
-
 
       <div className="form-group">
         <label>Quantity</label>
@@ -171,12 +167,17 @@ const AddProduct = () => {
         </label>
       </div>
 
-      <button className="mt-4 w-full bg-gray-800 hover:bg-grey-900 text-white text-sm py-2 px-4 font-semibold rounded focus:outline-none focus:shadow-outline h-10">Create Product</button>
+      <button className="mt-4 w-full bg-gray-800 hover:bg-grey-900 text-white text-sm py-2 px-4 font-semibold rounded focus:outline-none focus:shadow-outline h-10">
+        Create Product
+      </button>
     </form>
   );
 
   const showError = () => (
-    <div className="alert alert-danger" style={{display: error ? "" : "none"}}>
+    <div
+      className="alert alert-danger"
+      style={{ display: error ? "" : "none" }}
+    >
       {error}
     </div>
   );
@@ -184,7 +185,7 @@ const AddProduct = () => {
   const showSuccess = () => (
     <div
       className="w-full max-w-3xl text-center bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded relative mb-4"
-      style={{display: createdProduct ? "" : "none"}}
+      style={{ display: createdProduct ? "" : "none" }}
     >
       <h2>{`${createdProduct}`} is created</h2>
     </div>

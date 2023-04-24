@@ -5,111 +5,6 @@ import { isAuthenticated } from "../auth";
 import { getPurchaseHistory } from "./apiUser";
 import moment from "moment";
 
-// const UserDashboard = () => {
-
-//     const {user: {_id, name, email, role}, token} = isAuthenticated();
-
-//     const [history, setHistory] = useState([]);
-
-//     const init = (userId, token) => {
-//         getPurchaseHistory(userId, token).then(data => {
-//             if(data.error)
-//             {
-//                 console.log(data.error)
-//             }
-//             else
-//             {
-//                 setHistory(data);
-//             }
-//         })
-//     }
-
-//     useEffect(() => {
-//         init(_id, token)
-//         //eslint-disable-next-line
-//     }, [])
-
-//     const userLinks = () => {
-//         return (
-//             <div className="card mb-5">
-//                 <h4 className="card-header text-center">User Links</h4>
-//                 <ul className="list-group">
-//                     <li className="list-group-item"><Link to="/cart" className="nav-link">My Shopping Cart</Link></li>
-//                     <li className="list-group-item"><Link to={`/profile/${_id}`} className="nav-link">Update Profile</Link></li>
-//                 </ul>
-
-//             </div>
-//         )
-//     }
-
-//     const userInfo = () => {
-//         return (
-//             <div className="card mb-5">
-//             <h3 className="card-header text-center">User Information</h3>
-//             <ul className="list-group">
-//                 <li className="list-group-item">{name}</li>
-//                 <li className="list-group-item">{email}</li>
-//                 <li className="list-group-item">{role === 1 ? 'Admin': `User id : ${_id}`}</li>
-//             </ul>
-//             </div>
-//         )
-//     }
-
-//     const purchaseHistory = history => {
-//         return (
-//             <div className="card mb-5">
-//                 <h3 className="card-header">Purchase history</h3>
-//                 <ul className="list-group">
-//                     <li className="list-group-item">
-//                         {history.map((h, i) => {
-//                             return (
-//                                 <div>
-//                                     <hr />
-//                                     {h.products.map((p, i) => {
-//                                         return (
-//                                             <div key={i}>
-//                                                 <h6>Product name: {p.name}</h6>
-//                                                 <h6>
-//                                                     Product price: ${p.price}
-//                                                 </h6>
-//                                                 <h6>
-//                                                     Purchased date:{" "}
-//                                                     {moment(
-//                                                         p.createdAt
-//                                                     ).fromNow()}
-//                                                 </h6>
-//                                             </div>
-//                                         );
-//                                     })}
-//                                 </div>
-//                             );
-//                         })}
-//                     </li>
-//                 </ul>
-//             </div>
-//         );
-//     };
-
-//     return (
-//         <Layout title="Dashboard" description={`Welcome, ${name}`} className="container-fluid">
-//             <div className="row">
-//                 <div className="xs-col-12 col-sm-4">
-//                     {userLinks()}
-//                 </div>
-
-//                 <div className="xs-col-12 col-sm-8">
-//                     {userInfo()}
-//                     {purchaseHistory(history)}
-//                 </div>
-//             </div>
-//         </Layout>
-//     )
-// }
-
-// export default UserDashboard;
-
-///tl
-
 const UserDashboard = () => {
   const {
     user: { _id, name, email, role },
@@ -230,7 +125,10 @@ const UserDashboard = () => {
                             />
                           </div>
                           <div className="w-full md:w-1/2 px-4">
-                            <h1 className="text-3xl font-bold mb-4 mt-2"> {p.name}</h1>
+                            <h1 className="text-3xl font-bold mb-4 mt-2">
+                              {" "}
+                              {p.name}
+                            </h1>
                             <p className="text-gray-600 mb-4">
                               Lorem ipsum dolor sit amet, consectetur adipiscing
                               elit. Duis auctor, risus sed vehicula tempor, eros
@@ -240,15 +138,16 @@ const UserDashboard = () => {
                             </p>
                             <div className="flex items-center mb-4">
                               <span className="text-2xl font-bold mr-2">
-                              ₹
-                              {p.price}
+                                ₹{p.price}
                               </span>
                             </div>
-                            <h6 className="text-gray-500 font-midium"><div className="text-black font-medium text-sm">{moment(p.createdAt).fromNow()}</div>
-                            Purchased Date
+                            <h6 className="text-gray-500 font-midium">
+                              <div className="text-black font-medium text-sm">
+                                {moment(p.createdAt).fromNow()}
+                              </div>
+                              Purchased Date
                             </h6>
                           </div>
-
                         </div>
                       </div>
                     );
@@ -261,22 +160,6 @@ const UserDashboard = () => {
       </div>
     );
   };
-
-  //     return (
-  //         <Layout title="Dashboard" description={`Welcome, ${name}`} className="container-fluid">
-  //             <div className="row">
-  //                 <div className="xs-col-12 col-sm-4">
-  //                     {userLinks()}
-  //                 </div>
-
-  //                 <div className="xs-col-12 col-sm-8">
-  //                     {userInfo()}
-  //                     {purchaseHistory(history)}
-  //                 </div>
-  //             </div>
-  //         </Layout>
-  //     )
-  // }
 
   return (
     <Layout

@@ -44,109 +44,14 @@ export const Orders = () => {
       }
     });
   };
-
-  // const showStatus = (o) => {
-  //     return (<div className="form-group">
-  //         <h3 className="mark mb-4">Status: {o.status}</h3>
-  //         <select className = "form-control" onChange={(e) => handleStatusChange(e,o._id)}>
-  //             <option>Update Status</option>
-  //             {statusValues.map((status, i) => (
-  //                  <option key={i} value={status}>{status}</option>
-  //             ))}
-  //         </select>
-  //     </div>)
-  // }
-
-  //     const showOrdersLength = () => {
-  //         if(orders.length > 0)
-  //         {
-  //             return (
-  //                 <h2 className="">Total Orders: {orders.length}</h2>
-  //             )
-  //         }
-
-  //         else
-  //         {
-  //             return (
-  //                 <h1 className="font-bold text-2xl max-w-2xl mx-auto text-center h-fit py-5 w-fu text-sm bg-gray-200 appearance-none rounded w-full py-2 px-3 text-gray-700 mb-1 leading-tight focus:outline-none focus:shadow-outline ">No Orders</h1>
-  //             )
-  //         }
-  //     }
-
-  //     const showInput = (key, value) => {
-  //         return (<div className="input-group mb-2 mr-sm-2">
-  //             <div className="input-group-prepend">
-  //                 <div className="input-group-text">{key}</div>
-  //             </div>
-  //             <input type="text" className="form-control" value={value} readOnly />
-  //         </div>)
-  //     }
-
-  //     const showLoading = () => (
-  //         loading && (<div className="w-full mx-auto max-w-3xl text-center text-green-500">
-  //             <h2>Loading...</h2>
-  //         </div>)
-  //     )
-
-  //     useEffect(() => {
-  //         loadOrders()
-  //         loadStatusValues()
-  //         showLoading()
-  //         // eslint-disable-next-line
-  //     }, [])
-
-  //     return (
-  //         <Layout title="Orders" description={`Manage all the orders here`} className="container">
-  //             {showLoading()}
-  //         <div className="row">
-  //             <div className="xs-col-12 col-sm-8">
-  //                 {showOrdersLength()}
-  //                 {orders.map((o, oIndex) => {
-  //                     return (
-  //                         <div key={oIndex} className="mt-5" style={{borderBottom: "5px solid indigo"}}>
-  //                             <h2 className="mb-5">
-  //                                 <span className="bg-primary">
-  //                                     Order Id : {o._id}
-  //                                 </span>
-  //                             </h2>
-  //                             <ul className="list-group mb-2">
-  //                                 <li className="list-group-item">{showStatus(o)}</li>
-  //                                 <li className="list-group-item">Transaction_id: {o.transaction_id}</li>
-  //                                 <li className="list-group-item">Amount: {o.amount}</li>
-  //                                 <li className="list-group-item">Ordered by: {o.user.name}</li>
-  //                                 <li className="list-group-item">Order Date: {Moment(o.createdAt).fromNow()}</li>
-  //                                 <li className="list-group-item">Delivery address: {o.address}</li>
-  //                             </ul>
-
-  //                             <h5 className="mt-4 mb-4 font-italic">
-  //                                 Total products in the order: {o.products.length}
-  //                             </h5>
-
-  //                             {o.products.map((p, pIndex) => {
-  //                                 return (<div className="mb-4" key={pIndex} style={{padding: '20px', border: '1px solid indigo'}}>
-  //                                     {showInput('Product name', p.name)}
-  //                                     {showInput('Product price', p.price)}
-  //                                     {showInput('Product total', p.count)}
-  //                                     {showInput('Product id', p._id)}
-  //                                 </div>)
-
-  //                             })}
-  //                         </div>
-  //                     )
-  //                 })}
-  //             </div>
-  //         </div>
-  //     </Layout>
-  //     )
-  // }
-
-  // export default Orders;
-
+  
   const showStatus = (o) => {
     return (
       <div className="form-group">
-      <h3 className="text-indigo-600 mb-4 hover:underline hover:text-indigo-700 transition-colors">Status: {o.status}</h3>
-                                                          
+        <h3 className="text-indigo-600 mb-4 hover:underline hover:text-indigo-700 transition-colors">
+          Status: {o.status}
+        </h3>
+
         <select
           className="w-full px-3 py-2 rounded-md text-gray-700 bg-gray-100 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent"
           onChange={(e) => handleStatusChange(e, o._id)}

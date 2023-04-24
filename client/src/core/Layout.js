@@ -3,25 +3,6 @@ import Menu from "./Menu";
 import "../styles.css";
 import Footer from "./footer";
 
-// import Logo from "../../src/Logo.png"
-
-// const Layout = ({ title = 'Title', description = 'Description', className, children }) => {
-//     return (
-//         <div>
-//             <Menu />
-
-//             <div className="jumbotron">
-//                 {/* <img src={Logo} style={{width:"50px" , height:"50px"}}/> */}
-//                 <h2>{title}</h2>
-//                 <p className="lead">{description}</p>
-//             </div>
-//             <div className={className}>{children}</div>
-//         </div>
-//     )
-// }
-
-/////tl
-
 const Layout = ({
   title = "Title",
   description = "Description",
@@ -32,7 +13,6 @@ const Layout = ({
     <>
       <div className="flex flex-col min-h-screen">
         <Menu />
-       
 
         <header className="bg-gradient-to-r from-gray-800 to-black text-white py-3 text-center text-3xl mt-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -44,7 +24,6 @@ const Layout = ({
             <p className="mt-2 text-xl tracking-widest">{description}</p>
           </div>
         </header>
-       
 
         <main className={`flex-grow ${className}`}>
           <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">

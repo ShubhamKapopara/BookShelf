@@ -10,7 +10,7 @@ const teamData = [
     {
       id: 1,
       name: 'Shubham',
-      position: 'Founder,CEO,CTO,Sr. Web Developer',
+      position: 'Web Developer',
       photo: Shubham,
     },
     {

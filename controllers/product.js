@@ -36,56 +36,55 @@ exports.create = async (req, res) => {
   console.log("working");
   try {
     form.parse(req, (err, fields, files) => {
-        if (err) {
-          return res.status(400).json({ msg: "Image could not be uploaded" });
-        }
-    
-        // check for all fields
-        const { name, description, price, quantity, category, shipping } = fields;
-        if (
-          !name ||
-          !description ||
-          !price ||
-          !quantity ||
-          !category ||
-          !shipping
-        ) {
+      if (err) {
+        return res.status(400).json({ msg: "Image could not be uploaded" });
+      }
+
+      // check for all fields
+      const { name, description, price, quantity, category, shipping } = fields;
+      if (
+        !name ||
+        !description ||
+        !price ||
+        !quantity ||
+        !category ||
+        !shipping
+      ) {
+        return res.status(400).json({
+          err: "All fields are required",
+        });
+      }
+
+      // Create new product now
+      let product = new Product(fields);
+
+      // Handle files
+      if (files.photo) {
+        // Validate file size less than 1 MB
+        if (files.photo.size > 1000000) {
           return res.status(400).json({
-            err: "All fields are required",
+            msg: "File size should be less than 1 mb",
           });
         }
-    
-        // Create new product now
-        let product = new Product(fields);
-    
-        // Handle files
-        if (files.photo) {
-          // Validate file size less than 1 MB
-          if (files.photo.size > 1000000) {
-            return res.status(400).json({
-              msg: "File size should be less than 1 mb",
-            });
-          }
-    
-          product.photo.data = fs.readFileSync(files.photo.path);
-          product.photo.contentType = files.photo.type;
-        }
-    
-        // Save the new product
-        product.save((err, data) => {
-          if (err) return res.status(400).json({ msg: errorHandler(err) });
-    
-          res.json({
-            product: data,
-          });
+
+        product.photo.data = fs.readFileSync(files.photo.path);
+        product.photo.contentType = files.photo.type;
+      }
+
+      // Save the new product
+      product.save((err, data) => {
+        if (err) return res.status(400).json({ msg: errorHandler(err) });
+
+        res.json({
+          product: data,
         });
       });
+    });
   } catch (error) {
     res.json({
-        "err0r" : error
-    })
+      err0r: error,
+    });
   }
-  
 
   // Formidable is used to handle form data. we are using it to handle image upload
 };

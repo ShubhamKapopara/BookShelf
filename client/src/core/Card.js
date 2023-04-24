@@ -4,118 +4,6 @@ import ShowImage from "./ShowImage";
 import moment from "moment";
 import { addItem, updateItem, removeItem } from "./cartHelpers";
 
-// const Card = ({ product, showViewProductButton = true, showAddToCartButton = true,
-//     cartUpdate = false, showRemoveProductButton = false, setRun = f => f, run = undefined }) => {
-
-//     const [redirect, setRedirect] = useState(false);
-//     const [count, setCount] = useState(product.count);
-
-//     const showViewButton = (showViewProductButton) => {
-//         return (
-//             showViewProductButton && (
-//                 <Link to={`/product/${product._id}`} classNameName="mr-2 ">
-//                     <button classNameName="btn btn-outline-primary text-white rounded bg-primary mt-2 mb-2 mr-2 ">
-//                         View Product
-//                     </button>
-//                 </Link >
-//             )
-//         )
-//     }
-
-//     const addToCart = () => {
-//         addItem(product, () => {
-//             setRedirect(true);
-//         })
-//     }
-
-//     const shouldRedirect = redirect => {
-//         if (redirect) {
-//             return <Redirect to='/cart' />
-//         }
-//     }
-
-//     const showAddToCart = (showAddToCartButton) => {
-//         return (
-//             showAddToCartButton && <button onClick={addToCart} classNameName="btn btn-outline-warning rounded mt-2 mb-2">
-//                 Add to Cart
-//             </button>
-//         )
-//     }
-
-//     const showRemoveButton = showRemoveProductButton => {
-//         return (
-//             showRemoveProductButton && (
-//                 <button
-//                     onClick={() => {
-//                         removeItem(product._id);
-//                         setRun(!run); // run useEffect in parent Cart
-//                     }}
-//                     classNameName="btn btn-outline-danger mt-2 mb-2"
-//                 >
-//                     Remove Product
-//                 </button>
-//             )
-//         );
-//     };
-
-//     const showStock = (quantity) => {
-//         return quantity > 0 ?
-//             <span classNameName="badge badge-primary badge-pill">In Stock</span>
-//             : <span classNameName="badge badge-danger badge-pill">Out of Stock</span>
-//     }
-
-//     const handleChange = productId => event => {
-//         setRun(!run);
-//         setCount(event.target.value < 1 ? 1 : event.target.value);
-//         if (event.target.value >= 1) {
-//             updateItem(productId, event.target.value);
-//         }
-//     };
-
-//     const showCartUpdateOptions = cartUpdate => {
-//         return cartUpdate && <div>
-//             <div classNameName="input-group mb-3">
-//                 <div classNameName="input-group-prepend">
-//                     <span classNameName="input-group-text">Adjust Quantity</span>
-//                 </div>
-//                 <input type="number" value={count} classNameName="form-control" onChange={handleChange(product._id)} />
-//             </div>
-//         </div>
-//     }
-
-//     return (
-//         <div classNameName="card "style={{borderColor:"black", borderWidth:2 }}>
-//             <div classNameName="card-header name text-center bgc" style={{borderColor:"black", borderWidth:2}} >{product.name}</div>
-//             <div classNameName="card-body">
-//                 {shouldRedirect(redirect)}
-//                 <ShowImage item={product} url="product" />
-
-//                 <p classNameName="mt-2">{product.description}</p>
-//                 <p classNameName="font-weight-bold">₹ {product.price}</p>
-//                 <p classNameName="black-10">Category: {product.category && product.category.name}</p>
-//                 <p classNameName="black-8">Added {moment(product.createdAt).fromNow()}</p>
-
-//                 {showStock(product.quantity)}
-//                 <br />
-//                 {showViewButton(showViewProductButton)}
-
-//                 {showRemoveButton(showRemoveProductButton)}
-
-//                 {showAddToCart(showAddToCartButton)}
-
-//                 {showCartUpdateOptions(cartUpdate)}
-//             </div>
-//         </div>
-
-//     )
-// }
-
-// export default Card
-
-////tl
-
-
-
 const Card = ({
   product,
   showViewProductButton = true,
@@ -233,7 +121,7 @@ const Card = ({
               <div className="p-4 ">
                 <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                   {shouldRedirect(redirect)}
-                
+
                   <ShowImage
                     item={product}
                     url="product"
@@ -248,20 +136,23 @@ const Card = ({
                       {product.name}
                     </h1>
 
-
-
-                    
                     <p className="leading-relaxed mb-3 ">
-                    {showFullDescription 
-                      ? product.description
-                      : `${product.description.slice(0, 100)} ....`}
-                    <span className="font-bold" onClick={() => setShowFullDescription(!showFullDescription)}>
-                      {showFullDescription ? "  ....Show Less" : "Show More"}
-                    </span>
-                  </p>
+                      {showFullDescription
+                        ? product.description
+                        : `${product.description.slice(0, 100)} ....`}
+                      <span
+                        className="font-bold"
+                        onClick={() =>
+                          setShowFullDescription(!showFullDescription)
+                        }
+                      >
+                        {showFullDescription ? "  ....Show Less" : "Show More"}
+                      </span>
+                    </p>
 
-
-                    <p className="my-2 text-[17px] font-bold text-[#0FB478]">₹ {product.price}</p>
+                    <p className="my-2 text-[17px] font-bold text-[#0FB478]">
+                      ₹ {product.price}
+                    </p>
                     {showStock(product.quantity)}
                     <br />
                     {showViewButton(showViewProductButton)}
@@ -269,9 +160,15 @@ const Card = ({
                     {showAddToCart(showAddToCartButton)}
                     {showCartUpdateOptions(cartUpdate)}
                     <div className="flex items-center flex-wrap ">
-                      <a href=" " className="text-indigo-500 inline-flex items-center text-sm md:mb-2 lg:mb-0">
-                      {moment(product.createdAt).fromNow().split(' ').map((s) => s.charAt(0).toUpperCase() + s.slice(1)).join(' ')}
-
+                      <a
+                        href=" "
+                        className="text-indigo-500 inline-flex items-center text-sm md:mb-2 lg:mb-0"
+                      >
+                        {moment(product.createdAt)
+                          .fromNow()
+                          .split(" ")
+                          .map((s) => s.charAt(0).toUpperCase() + s.slice(1))
+                          .join(" ")}
 
                         <svg
                           className="w-4 h-4 ml-2"

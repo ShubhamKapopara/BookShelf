@@ -15,7 +15,6 @@ router.post('/category/create/:userId', create);
 router.put('/category/:categoryId/:userId', requireSignin, isAuth, isAdmin, update);
 router.delete('/category/:categoryId/:userId', requireSignin, isAuth, isAdmin, remove);
 
-
 // Automatically run this function and populate in req when a parameter is found
 router.param('categoryId', categoryById);
 router.param("userId", userById);
