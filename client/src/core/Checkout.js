@@ -157,7 +157,7 @@ const Checkout = ({ products }) => {
           />
           <button
             onClick={buy}
-            className=" flex justify-center mx-auto w-full max-w- mt-4 bg-green-500 hover:bg-green-600 text-white text-sm py-2 px-4 font-semibold rounded focus:outline-none focus:shadow-outline h-10"
+            className=" flex justify-center mx-auto w-full max-w-lg mt-4 bg-green-500 hover:bg-green-600 text-white text-sm py-2 px-4 font-semibold rounded focus:outline-none focus:shadow-outline h-10"
             style={{ display: data.success ? "none" : "" }}
           >
             Pay

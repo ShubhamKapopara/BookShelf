@@ -141,7 +141,7 @@ const Card = ({
                         ? product.description
                         : `${product.description.slice(0, 100)} ....`}
                       <span
-                        className="font-bold"
+                        className="font-bold cursor-pointer"
                         onClick={() =>
                           setShowFullDescription(!showFullDescription)
                         }

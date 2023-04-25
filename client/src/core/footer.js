@@ -1,4 +1,5 @@
 import React from "react";
+import { SiInstagram } from "react-icons/si";
 
 function Footer() {
   return (
@@ -18,13 +19,27 @@ function Footer() {
                   className="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
                   type="button"
                 >
-                  <i className="fab fa-twitter"></i>
+                  {" "}
+                  <a
+                    href="https://instagram.com/shubhamkapopara?igshid=ZDdkNTZiNTM="
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <SiInstagram className="ml-3" />
+                  </a>
                 </button>
                 <button
                   className="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
                   type="button"
                 >
-                  <i className="fab fa-facebook-square"></i>
+                  {" "}
+                  <a
+                    href="https://www.linkedin.com/in/shubham-kapopara-18bb26244/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="fab fa-linkedin"></i>
+                  </a>
                 </button>
                 <button
                   className="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
@@ -36,7 +51,10 @@ function Footer() {
                   className="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
                   type="button"
                 >
-                  <i className="fab fa-github"></i>
+                  <a target="_black" href="https://github.com/ShubhamKapopara">
+
+                    <i className="fab fa-github"></i>
+                  </a>
                 </button>
               </div>
             </div>

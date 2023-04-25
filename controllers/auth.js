@@ -47,7 +47,7 @@ exports.signup = async (req, res) => {
       text:
         "Hello " +
         user.name +
-        ", \n\nWelcome to BookShelf. This is a fully functional e-commerce app built on MERN stack along with payment gateway. \nAny suggestions are always welcome. \n\nRegards, \nAnant Mathur",
+        ", \n\nWelcome to BookShelf. This is a fully functional e-commerce app built on MERN stack along with payment gateway. \nAny suggestions are always welcome. \n\nRegards, \nTeam BookShelf",
       // };,
     };
     await smtpTrans.sendMail(mailOptions);
