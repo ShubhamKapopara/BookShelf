@@ -33,7 +33,7 @@ The BookShelf application provides:
 
 ## 📂 Project Structure
 
-BookShelf/
+-**BookShelf**
 -├── client/ # React.js frontend
 -├── controllers/ # Backend route handlers
 -├── models/ # MongoDB schemas
