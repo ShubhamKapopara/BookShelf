@@ -1,6 +1,6 @@
 # 📚 BookShelf – Online Bookstore Management System
 
-[Live Demo](https://frontend2-one.vercel.app/)  
+[BookShelf](https://frontend2-one.vercel.app/)  
 
 BookShelf is a full-stack bookstore management system built with **React.js**, **Node.js**, **Express.js**, and **MongoDB**. It allows users to browse books, manage orders, and provides an admin dashboard for managing books, users, and orders.
 
