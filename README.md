@@ -34,15 +34,15 @@ The BookShelf application provides:
 ## 📂 Project Structure
 
 BookShelf/
-├── client/ # React.js frontend
-├── controllers/ # Backend route handlers
-├── models/ # MongoDB schemas
-├── routes/ # API routes
-├── helpers/ # Utility functions
-├── validator/ # Input validation
-├── app.js # Main backend server
-├── package.json # Project dependencies
-└── .gitignore
+-├── client/ # React.js frontend
+-├── controllers/ # Backend route handlers
+-├── models/ # MongoDB schemas
+-├── routes/ # API routes
+-├── helpers/ # Utility functions
+-├── validator/ # Input validation
+-├── app.js # Main backend server
+-├── package.json # Project dependencies
+-└── .gitignore
 
 yaml
 Copy code
